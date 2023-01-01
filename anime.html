@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="brand-title">VIDEO GALLERY : ANIME</div>
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="family.html">FAMILY VIDEOS</a></li>
+            <li><a href="sports.html">SPORTS VIDEOS</a></li>
+            <li><a href="travel.html">TRAVEL VIDEOS</a></li>
+            <li><a href="films.html">FILMS</a></li>
+            <li><a href="family.html">ABOUT US</a></li>
+
+
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+
+    <div class="container">
+
+        <h1>Anime</h1>
+
+        <div class="video-container">
+           
+            <div class="video"><video src="/media/anime/anime (1).mp4" muted></video><h4 style="color: white;">Bleach(2020) Trailer</h4></div>
+            <div class="video"><video src="/media/anime/anime (2).mp4" muted></video><h4 style="color: white;">BlueLock(2020) Trailer</h4></div>
+            <div class="video"><video src="/media/anime/anime (3).mp4" muted></video><h4 style="color: white;">Black Clover(2021) Trailer</h4></div>
+            <div class="video"><video src="/media/anime/anime(4).mp4" muted></video><h4 style="color: white;">Drifting Home(2022) Trailer</h4></div>
+            <div class="video"><video src="/media/anime/anime (5).mp4" muted></video><h4 style="color: white;">Bloodline(2020) Trailer</h4></div>
+            <div class="video"><video src="/media/anime/anime(6).mp4" muted></video><h4 style="color: white;">Naruto(2021) Trailer</h4></div>
+        </div>
+
+        <div class="popup-video">
+            <span>&times;</span>
+            <video src="/media/anime/anime (1).mp4" muted autoplay controls></video>
+        </div>
+
+    </div>
+    <script>
+
+        document.querySelectorAll(".video-container video").forEach(vid => {
+            vid.onclick = () => {
+                document.querySelector(".popup-video").style.display = "block";
+                document.querySelector(".popup-video video").src = vid.getAttribute("src");
+            }
+        });
+
+        document.querySelector(".popup-video span").onclick = () =>{
+            document.querySelector(".popup-video").style.display = "none";
+        }
+
+        const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
+})
+
+    </script>
+    
+</body>
+</html>
